@@ -9,3 +9,5 @@ Idea is to create arrays that store individual parts of output strings.
 One array is used for single digits, one for numbers from 10 to 19, one for 20, 30, 40, 50, .. etc, and one for powers of 10.
 
 The given number is divided in two parts: first two digits and last two digits, and the two parts are printed separately.
+
+![Alt text](https://github.com/devandroid-2020/number_to_word/tree/master/app/src/main/res/drawable-v24/NumberToWordScreenshot.png "Number to word app screenshot")
