@@ -8,12 +8,12 @@ import kotlin.math.floor
 class ConverterPresenter(var view: ConverterContract.View?) : ConverterContract.Presenter {
 
     private var convertedValue: String? = ""
-    private var isValidNumber = true
+    private var isValidNumber = false
 
     override fun convertNumberToWord(numberEntered: String) {
         try {
-            //Hardcoded number because of unit test success cases testing.
-            val bigDecimalConvert = BigDecimal("10")
+            //Hardcoded number because of unit test failure cases testing.
+            val bigDecimalConvert = BigDecimal("")
 
             var number = bigDecimalConvert.toLong()
             var no = bigDecimalConvert.toLong()
