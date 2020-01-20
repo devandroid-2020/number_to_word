@@ -16,21 +16,17 @@ class ConverterPresenterTest {
     private val view: ConverterContract.View = mock()
     private val word: String = "Ten"
 
-    //Unit test case gets failed
-    //Un-Comment below code once, An operation will be implemented
     @Before
     fun setUp() {
-//        this.contractPresenter = ConverterPresenter(view)
-//        this.contractPresenter.convertNumberToWord("10")
+        this.contractPresenter = ConverterPresenter(view)
+        this.contractPresenter.convertNumberToWord("10")
     }
 
-    //Unit test case gets failed
-    //Un-Comment below code once, An operation will be implemented
     @Test
     fun testConvertNumberToWordSuccess() {
-//        contractPresenter.convertNumberToWord("10")
-//        Assert.assertTrue(contractPresenter.isValidNumber())
-//        Assert.assertEquals(contractPresenter.getConvertedValue(), word)
+        contractPresenter.convertNumberToWord("10")
+        Assert.assertTrue(contractPresenter.isValidNumber())
+        Assert.assertEquals(contractPresenter.getConvertedValue(), word)
     }
 
     //Unit test case gets failed
