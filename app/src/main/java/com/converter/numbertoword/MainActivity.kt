@@ -21,16 +21,15 @@ class MainActivity : AppCompatActivity(), ConverterContract.View {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        mPresenter= ConverterPresenter(this)
+        mPresenter = ConverterPresenter(this)
 
         btnConvert.setOnClickListener { convertNumber() }
         imgClear.setOnClickListener { clearText() }
         textChangeListener()
     }
 
-
     private fun textChangeListener() {
-        etEnterNumber.addTextChangedListener(object :TextWatcher {
+        etEnterNumber.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {}
 
@@ -64,15 +63,14 @@ class MainActivity : AppCompatActivity(), ConverterContract.View {
 
     private fun convertNumber() {
         if (!TextUtils.isEmpty(etEnterNumber.text.toString())) {
-             mPresenter!!.convertNumberToWord(etEnterNumber.text.toString())
+            mPresenter!!.convertNumberToWord(etEnterNumber.text.toString())
 
         } else {
-             Toast.makeText(
-                 applicationContext,
+            Toast.makeText(
+                applicationContext,
                 getString(R.string.please_enter_number),
                 Toast.LENGTH_SHORT
             ).show()
         }
     }
-
 }
