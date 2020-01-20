@@ -10,10 +10,13 @@ class ConverterPresenter(var view: ConverterContract.View?) : ConverterContract.
     private var convertedValue: String? = ""
     private var isValidNumber = false
 
+    /**
+     * This will execute for number to word conversion
+     */
     override fun convertNumberToWord(numberEntered: String) {
         try {
-            //Hardcoded number because of unit test failure cases testing.
-            val bigDecimalConvert = BigDecimal("")
+            //String converted into BigDecimal format
+            val bigDecimalConvert = BigDecimal(numberEntered)
 
             var number = bigDecimalConvert.toLong()
             var no = bigDecimalConvert.toLong()
@@ -53,6 +56,7 @@ class ConverterPresenter(var view: ConverterContract.View?) : ConverterContract.
 
             val digits = arrayOf("", "Hundred", "Thousand", "Lakh")
 
+            //Iterate loop 1 to 6 times (depends on number length)
             while (i < size) {
 
                 val divider = if ((i == 2)) 10 else 100
@@ -89,14 +93,6 @@ class ConverterPresenter(var view: ConverterContract.View?) : ConverterContract.
         }
     }
 
-    override fun getConvertedValue(): String? {
-        return convertedValue
-    }
-
-    override fun isValidNumber(): Boolean {
-        return isValidNumber
-    }
-
     private fun join(@NonNull delimiter: CharSequence, @NonNull tokens: Iterable<*>): String {
         val it = tokens.iterator()
         if (!it.hasNext()) {
@@ -109,5 +105,13 @@ class ConverterPresenter(var view: ConverterContract.View?) : ConverterContract.
             sb.append(it.next())
         }
         return sb.toString()
+    }
+
+    override fun getConvertedValue(): String? {
+        return convertedValue
+    }
+
+    override fun isValidNumber(): Boolean {
+        return isValidNumber
     }
 }
